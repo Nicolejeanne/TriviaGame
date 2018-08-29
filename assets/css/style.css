@@ -1,0 +1,73 @@
+body {
+    background-color: black;
+
+}
+.header {
+    background-image: none;
+    text-align: center;
+    width: 825px;
+    /* position: static; */
+    margin: 30px auto;
+    padding: 3rem 1rem;
+}
+.display-4 {
+    font-family: 'Fascinate', cursive;
+    font-size: 75px;
+    text-align: center;
+}
+a.btn-lg {
+    align-items: center;
+    background-color: #9F0307;
+    border-color:  #9F0307;
+    color: white;
+}
+.btn-lg:hover {
+    background-color: gray;
+    border-color: gray;
+}
+.seats {
+    background-image: url("../images/images.jpg");
+    background-repeat: repeat-x;
+    height: 400px;
+}
+#page2 {
+    background-image: url("../images/download6.jpg");
+    opacity: 50%;
+    
+}
+.secondLead {
+    text-align: center;
+}
+.secondJumbo {
+    padding: 25px;
+}
+.card {
+    border-color:black;
+    width: 900px;
+    margin: 5px auto;
+}
+.card-header{
+    background-color: #9F0307;
+    color:white;
+    font-size: 24px;
+}
+.timer {
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+    font-weight: 700;
+    font-size: 32px;
+    background-color: goldenrod;
+    
+}
+.blockquote {
+    text-align: center;
+    
+}
+
+
+font-family: 'Sarina', cursive;
+font-family: 'Fascinate Inline', cursive;
+font-family: 'Kumar One', cursive;
+font-family: 'Warnes', cursive;
+font-family: 'Fascinate', cursive;
