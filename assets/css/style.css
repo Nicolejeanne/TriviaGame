@@ -30,11 +30,7 @@ a.btn-lg {
     background-repeat: repeat-x;
     height: 400px;
 }
-#page2 {
-    background-image: url("../images/download6.jpg");
-    opacity: 50%;
-    
-}
+
 .secondLead {
     text-align: center;
 }
@@ -50,6 +46,7 @@ a.btn-lg {
     background-color: #9F0307;
     color:white;
     font-size: 24px;
+    text-align: center;
 }
 .timer {
     width: 300px;
@@ -65,7 +62,14 @@ a.btn-lg {
     
 }
 
-
+#page2 {
+    background-image: url("../images/download6.jpg"); 
+    opacity: 50;
+    padding-bottom: 25px;
+    height: 1000px;
+    
+    
+}
 font-family: 'Sarina', cursive;
 font-family: 'Fascinate Inline', cursive;
 font-family: 'Kumar One', cursive;
