@@ -40,7 +40,7 @@ a.btn-lg {
 .card {
     border-color:black;
     width: 900px;
-    margin: 5px auto;
+    margin: 15px auto;
 }
 .card-header{
     background-color: #9F0307;
@@ -57,7 +57,7 @@ a.btn-lg {
     background-color: goldenrod;
     
 }
-.blockquote {
+.answerArea {
     text-align: center;
     
 }

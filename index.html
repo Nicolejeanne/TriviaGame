@@ -20,7 +20,7 @@
         <div class="jumbotron header">
             <h1 class="display-4">Movie Trivia</h1>
             <p class="lead"><strong>Test your movie trivia knowledge!</strong></p>
-               <a class="btn btn-primary btn-lg" href="#" data-launch-view="page2" role="button">Let's play!</a>
+               <a class="btn btn-primary btn-lg" href="file:///C:/Users/Nicole/Desktop/Bootcamp/Homework/TriviaGame/index.html#newPage" data-launch-view="page2" role="button">Let's play!</a>
         </div>
     <!-- Intro page seat iamge -->
     <div class="jumbotron jumbotron-fluid seats">
@@ -31,22 +31,23 @@
 
 <!-- Questions page -->
 <!-- Questions page header -->
-    <div class="view hide" id="page2">
+    <a name="newPage"><div class="view hide" id="page2">
         <div class="jumbotron jumbotron-fluid secondJumbo">
             <div class="container">
             <h1 class="display-4">Movie Trivia</h1>
             <p class="lead secondLead"><strong>Choose an answer in the time allotted.</strong></p>
             </div>
-        </div>
+        </div></a>
 <!-- Timer -->
         <div class="card timer">
             <div class="card-body timer">Get Ready!</div>
         </div>
 <!-- Question block -->
         <div class="card">
+            <img class="card-img-top" src="#" alt="Card image cap">
             <div class="card-header">The trivia question will be here</div>
             <div class="card-body">
-            <blockquote class="blockquote mb-0">
+            <div class="answerArea mb-0">
     <!-- Default inline 1 Radio button-->
             <div class="custom-control custom-radio custom-control-inline">
             <input type="radio" class="custom-control-input" id="defaultInline1" name="inlineDefaultRadiosExample">
@@ -65,10 +66,10 @@
             <label class="custom-control-label label3" for="defaultInline3"></label>
             </div>
          
-            </blockquote>
         </div>
         </div>
-    
+        </div>
+     
     </div>
 
     <div class="view hide" id="page3">

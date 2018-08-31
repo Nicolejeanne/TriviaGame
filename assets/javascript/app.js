@@ -4,12 +4,14 @@ $(document).ready(function(e){
 let userPick;
 let correctAnswer = 0;
 let wrongAnswer = 0;
-let question = 0;
-let count = 10;
+let index = 0;
+let count;
+let counter;
 
 let movieQuestion = [{
     question: "Which of the following is NOT one of Derek Zoolander's signature looks?",
     choices: ["Magnum", "Blue Steel", "Kryptonite"],
+    image: ["http://images1.fanpop.com/images/quiz/8413_1213279136018_441_300.jpg"],
     validAnswer: 2
 }, {
     question: "What is the name of Moana's pet pig in her namesake movie?",
@@ -22,7 +24,7 @@ let movieQuestion = [{
 }];
 
 // function to switch between screen views
-function showView(viewName) {
+/*function showView(viewName) {
     $('.view').hide();
     $('#' + viewName).show();
 }
@@ -30,7 +32,7 @@ $('[data-launch-view]').click(function (e) {
     e.preventDefault();
     var viewName = $(this).attr('data-launch-view');
     showView(viewName);
-});
+});*/
 // end of screen view function
 
 // Initializing the game
@@ -40,7 +42,7 @@ function initializeGame(){
 $(".btn-primary").click(function(){
     
 //Set timer to time remaining, count down per second
-counter = setInterval(timer, 1000);
+
 
 //Display all question and answer options 
 displayTrivia();
@@ -49,29 +51,29 @@ displayTrivia();
 //Timer function
 function timer(){
     count--;
+    console.log(count);
+    $(".timer").html("Time remaining: " + count);
     if (count <= 0) {
         clearInterval(counter);
         $(".timer").html("Time's up!");
     }
-    $(".timer").html("Time remaining: " + count);
+    
 } 
     
 //Display questions function
 function displayTrivia() {
-    $(".card-header").html(movieQuestion[0].question);
-    question++;
+    count = 10;
+    counter = setInterval(timer, 1000);
+    $(".card-img-top").attr("src", movieQuestion[index].image);
+    $(".card-header").html(movieQuestion[index].question);
+    $(".label1").html(movieQuestion[index].choices[0]);
+    $(".label2").html(movieQuestion[index].choices[1]);
+    $(".label3").html(movieQuestion[index].choices[2]);
 
-    let choicesArr = movieQuestion[0].choices;
-
-    for (let i = 0; i < choicesArr.length; i++) {
-        let radioButton = $('<radio>');
-        radioButton.text(choicesArr[i]);
-        radioButton.attr('data-id', i);
-        $(".label1").append(radioButton);
-        
-    }
-
+    index++;
 } 
+document.onkeyup = displayTrivia;
+
 // Choosing an answer   
 $('.blockquote').on('click', 'radio', function(e){
     userPick = $(this).data("id");
