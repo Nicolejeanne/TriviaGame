@@ -1,6 +1,9 @@
 body {
-    background-color: black;
+   background-color: black;
 
+}
+.jumbotron {
+    background-color: #FFF3ED;
 }
 .header {
     background-image: none;
@@ -27,12 +30,14 @@ a.btn-lg {
 }
 .seats {
     background-image: url("../images/images.jpg");
-    background-repeat: repeat-x;
+    background-repeat: repeat;
     height: 400px;
+    margin-top: 75px;
 }
 
 .secondLead {
     text-align: center;
+    margin-bottom: 0;
 }
 .secondJumbo {
     padding: 25px;
@@ -43,10 +48,16 @@ a.btn-lg {
     margin: 15px auto;
 }
 .card-header{
-    background-color: #9F0307;
-    color:white;
+    background-color: #FFF3ED;
+    
     font-size: 24px;
     text-align: center;
+}
+.card-img-top{
+    width: 300px;
+    height: auto;
+    position: relative;
+    left: 42%;
 }
 .timer {
     width: 300px;
@@ -54,7 +65,8 @@ a.btn-lg {
     text-align: center;
     font-weight: 700;
     font-size: 32px;
-    background-color: goldenrod;
+    background-color: #9F0307;
+    color:white;
     
 }
 .answerArea {
@@ -62,13 +74,23 @@ a.btn-lg {
     
 }
 
-#page2 {
-    background-image: url("../images/download6.jpg"); 
-    opacity: 50;
-    padding-bottom: 25px;
-    height: 1000px;
-    
-    
+/* #page2 { */
+    /* background-image: url("../images/download6.jpg");  */
+    /* opacity: 50; */
+    /* padding-bottom: 25px; */
+    /* height: 1000px; */
+/* } */
+.nav-link {
+    color: grey;
+}
+.nav-link:hover{
+    color: red;
+}
+.buttonText {
+    text-align: center;
+}
+.card-body {
+    padding: 0;
 }
 font-family: 'Sarina', cursive;
 font-family: 'Fascinate Inline', cursive;
