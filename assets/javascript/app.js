@@ -6,7 +6,8 @@ let correctAnswer = 0;
 let wrongAnswer = 0;
 let index = 0;
 let count;
-let counter;
+let intervalId;
+let clockRunning = false;
 
 let movieQuestion = [{
     question: "Which of the following is NOT one of Derek Zoolander's signature looks?",
@@ -29,53 +30,63 @@ let movieQuestion = [{
 // Initializing the game
 function initializeGame(){
 
-//Set timer to time remaining, count down per second
-
 //Display all question and answer options 
 displayTrivia();
-
 }
 
 //Timer function
 function timer(){
+    if(!clockRunning){
+        intervalId = setInterval(decrement, 1000);
+        clockRunning = true;
+    }
+}
+function decrement() {
     count--;
-    console.log(count);
-    $(".timer").html("Time remaining: " + count);
+    $(".clock").text("Time remaining: " + count);
     if (count <= 0) {
-        clearInterval(counter);
-        $(".timer").html("Time's up!");
-    } 
-} 
-
+        $(".clock").html("Time's up!");
+        stop();
+    }
+    console.log(count);
+}
+function stop() {
+    clearInterval(intervalId);
+  }
+  
+ 
 //Display questions function
 function displayTrivia() {
     count = 10;
-    counter = setInterval(timer, 1000);
+    timer();
     $(".card-img-top").attr("src", movieQuestion[index].image);
     $(".card-header").html(movieQuestion[index].question);
     $(".button1").html(movieQuestion[index].choices[0]);
     $(".button2").html(movieQuestion[index].choices[1]);
     $(".button3").html(movieQuestion[index].choices[2]);
     index++;
-} 
+ 
 
-$("button").click(function(){
+$("button").on("click", function() {
     displayTrivia();
 });
-
-// Choosing an answer   
-$('.blockquote').on('click', 'radio', function(e){
-    userPick = $(this).data("id");
-    movieQuestion[0].validAnswer;
-    if(userPick !== movieQuestion[0].validAnswer) {
+}
+// Choosing an answer
+$('.questions').on('click', function(e){
+    userPick = $('button').data("value", movieQuestion[index].choices);
+    // movieQuestion[index].validAnswer;
+    if(userPick !== movieQuestion[index].validAnswer) {
+        userpick = wrongAnswer;
    
-    $('.blockquote').text("Wrong Answer! The correct answer is" + movieQuestion[0].validAnswer);
-    incorrectAnswer++;
+    console.log("Wrong Answer!");
+    wrongAnswer++;
+    console.log(wrongAnswer);
    
-   } else if (userPick === movieQuestion[0].validAnswer) {
-   $('.blockquote').text("Correct!!! The pet tiger name is" + movieQuestion[0].validAnswer);
+   } else if (userPick === movieQuestion[index].validAnswer) {
+       userPick = correctAnswer;
+   console.log("Correct!!!")
    correctAnswer++;
-   
+   console.log(correctAnswer);
    }
 });
 
