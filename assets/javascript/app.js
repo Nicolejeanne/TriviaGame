@@ -207,13 +207,14 @@ if (movieQuestion[index] === movieQuestion[1]) {
 });*/
 
 function showScore() {
-if(movieQuestion[index] === movieQuestion.length || count <= 0){
+if(movieQuestion[index] >= movieQuestion.length || count <= 0){
     $(".clock").html("Time's up!");
     $(".card-header").html("Your Score is:");
     $(".button1").html("Correct Answers: " + correctAnswer);
     $(".button2").html("Wrong Answers: " + wrongAnswer);
     $(".card-img-top").hide();
-    $(".button3").html("Play Again???");
+    $(".button3").html("Play Again? Click here!");
+    $(".button3").css({"background-color": "#9F0307", "color": "white"});
     $(".button3").click(function() {
         window.location.reload();
 });
