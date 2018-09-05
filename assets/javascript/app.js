@@ -82,7 +82,7 @@ function timer(){
 function decrement() {
     count--;
     $(".clock").text("Time remaining: " + count);
-    if (count <= 0) {
+    if (count === 0) {
         // $(".clock").html("Time's up!");
         showScore();
         stop();
@@ -111,7 +111,7 @@ $("button").on("click", function() {
     
     
 });
-
+userPick();
 // Choosing an answer
 function userPick() {
 if (movieQuestion[index] === movieQuestion[0]) {
@@ -119,35 +119,31 @@ if (movieQuestion[index] === movieQuestion[0]) {
         correctAnswer++;
         console.log("youve got " + correctAnswer);
         });
-     } else {
+} /*else {
         wrongAnswer++;
         console.log("you're wrong " + wrongAnswer)
-    }
-}
-if (movieQuestion[index] === movieQuestion[1]) {
+    }*/
+
+else if (movieQuestion[index] === movieQuestion[1]) {
     $(".button1").click(function() {
         correctAnswer++;
         console.log("youve got " + correctAnswer);
-        $(".button1").off("click", function() {
+        /*$(".button1").off("click", function() {
             correctAnswer++;
         console.log("youve got " + correctAnswer);
-    });
+    });*/
 });
-} else if (movieQuestion[index] === movieQuestion[2]) {
+} else if (movieQuestion[index].question === movieQuestion[2].question) {
     $(".button1").click(function() {
         correctAnswer++;
         console.log("youve got " + correctAnswer);
-        $(".button1").off("click", function() {
-            correctAnswer++;
-        console.log("youve got " + correctAnswer);
-    });
 });
-} else if (movieQuestion[index] === movieQuestion[3]) {
+} else if (movieQuestion[index].question === movieQuestion[3].question) {
     $(".button2").click(function() {
         correctAnswer++;
         console.log("youve got " + correctAnswer);
 });
-} else if (movieQuestion[index] === movieQuestion[4]) {
+} else if (movieQuestion[index].question === movieQuestion[4].question) {
     $(".button3").click(function() {
         correctAnswer++;
         console.log("youve got " + correctAnswer);
@@ -181,7 +177,7 @@ if (movieQuestion[index] === movieQuestion[1]) {
     wrongAnswer++;
     console.log("you're wrong " + wrongAnswer)
 }
-
+}
 
 
 
@@ -207,7 +203,7 @@ if (movieQuestion[index] === movieQuestion[1]) {
 });*/
 
 function showScore() {
-if(movieQuestion[index] >= movieQuestion.length || count <= 0){
+if(movieQuestion[index] <= movieQuestion.length || count === 0) {
     $(".clock").html("Time's up!");
     $(".card-header").html("Your Score is:");
     $(".button1").html("Correct Answers: " + correctAnswer);
@@ -220,6 +216,7 @@ if(movieQuestion[index] >= movieQuestion.length || count <= 0){
 });
 }
 }
+
 initializeGame();
 
 });
